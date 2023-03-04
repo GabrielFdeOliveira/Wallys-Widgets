@@ -1,24 +1,40 @@
-//Define the available pack sizes and their respective widget quantities.
-//Accept the user's order size as input. 
-//Determine if the order can be fulfilled with a single package (smallest possible)
-//If not, check if the order can be fulfilled with the next size of pack.
-//After, check what is the remaining amount and find which pack it can be fitted, when found, add said pack to the order status and repeat the operation same operation if there still units remaining
-//Output the recommended pack sizes and their quantities to fulfill the order size.
+const packSizes = [5000, 2000, 1000, 500, 250];
 
-const packSizes = [250, 500, 1000, 2000, 5000];
+export function order(numOfWidgets) {
+  let result = [];
+  if (typeof numOfWidgets !== 'number' || numOfWidgets <= 0) {
+    throw new Error('Invalid input');
+  }
 
-const order = (numOfWidgets) => {
-    
-    for(let i = 0; i < packSizes.length; i++){
-        let ref = i + 1
-        if(numOfWidgets <= packSizes[i]){
-            console.log("Pack size: " + packSizes[i]);
-        }else if (numOfWidgets <= (packSizes[i] + packSizes[ref])){
-            console.log(`Pack size:  ${packSizes[i]} , ${packSizes[ref]}`);
+  let remaining = numOfWidgets;
+
+  while (remaining > 0) {
+    for (let i = 0; i < packSizes.length; i++) {
+      if (remaining > packSizes[i]) {
+        if (i === 0) {
+          remaining -= packSizes[i];
+          result.push(packSizes[i]);
+          break;
+        } else {
+          if (i < packSizes.length - 1) {
+            remaining -= packSizes[i];
+            result.push(packSizes[i]);
             break;
+          } else {
+            remaining = remaining - packSizes[i - 1];
+            result.push(packSizes[i - 1]);
+            break;
+          }
         }
+      }
+      else if (i === packSizes.length - 1) {
+        remaining -= packSizes[i];
+        result.push(packSizes[i]);
+        break;
+      }
     }
-    console.log("Order function executed.");
+  }
+  console.log(result)
+  return result;
 }
-
-order(900);
+order(12001)
