@@ -1,0 +1,41 @@
+1- Read and understand the problem and it's requirements.
+The program should take any order size and output the packs to fulfill the order according to the given rules. The program should be flexible to accommodate new pack sizes, changes or removal of existing packs. ✅
+E
+2- Plan the solution:
+I'll try to break down the problem into smaller steps and plan the implementation. ✅
+
+3- Write the code:
+I'll use JavaScript, since it's the language I'm more familiar with
+
+    1- Define the available pack sizes and their respective widget quantities;
+
+    2- Accept the user's order size as input;
+
+    3- Initiate an array to hold the result;
+
+    4- Validate the user's input;
+
+    5- Initiate a variable to keep track of the units left in the order;
+
+    6- Create a while loop which will continue until all widgets have been packed;
+
+    7- Create a for loop to iterate through the pack sizes;
+
+    8- Inside the for loop check if the remaining units are greater than the package size, so we can move from size to size;
+
+    9- Check if we can fit the largest package in the order, if true, push it to the result, subtract the value from the remaining units and break out the for loop;
+
+    10- If the current pack size is not the largest and there are still more pack sizes to try, use the current pack size to pack as many widgets as possible, inserting it to the result array and breaking out the for loop;
+
+    11- If the current pack size is the smallest, use the next smallest (the one before) pack size to pack the remaining widgets;
+
+    12- At the end, after the remaining units become less than the smallest package, I pushed it anyway to complete the order;
+
+4- Test:
+Test the program with various input sizes and pack configurations to ensure that it is working correctly.
+
+5- Refactor:
+Refactor the code if I can, trying to improve performance, readability, and maintainability.
+
+6- Build the front-end:
+Create some sort of management system for the front-end to manipulate the widgets orders, using the logic built at the back end.
