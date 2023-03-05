@@ -1,6 +1,6 @@
 const packSizes = [5000, 2000, 1000, 500, 250];
 
-export function order(numOfWidgets) {
+function calculatePacks(numOfWidgets) {
   let result = [];
   if (typeof numOfWidgets !== 'number' || numOfWidgets <= 0) {
     throw new Error('Invalid input');
@@ -37,4 +37,5 @@ export function order(numOfWidgets) {
   console.log(result)
   return result;
 }
-order(12001)
+
+module.exports = calculatePacks;
