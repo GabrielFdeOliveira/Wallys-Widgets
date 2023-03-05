@@ -1,4 +1,4 @@
-const { test, expect } = require("@jest/globals");
+const { expect } = require("@jest/globals");
 const calculatePacks = require('./solution.js');
 
 describe('Tests for calculatePacks function', () => {
