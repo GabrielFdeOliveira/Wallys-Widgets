@@ -1,18 +1,15 @@
 const packSizes = [5000, 2000, 1000, 500, 250];
 
 function calculatePacks(numOfWidgets) {
-    
   if (typeof numOfWidgets !== "number" || numOfWidgets <= 0) {
     throw new Error("Invalid input");
   }
-  
+
   let result = [];
   let remaining = numOfWidgets;
 
   while (remaining > 0) {
-
     for (let i = 0; i < packSizes.length; i++) {
-
       if (remaining > packSizes[i]) {
         if (i === 0) {
           remaining -= packSizes[i];
@@ -29,16 +26,13 @@ function calculatePacks(numOfWidgets) {
             break;
           }
         }
-
       } else if (i === packSizes.length - 1) {
         remaining -= packSizes[i];
         result.push(packSizes[i]);
         break;
       }
     }
-    
   }
-  console.log(result)
   return result;
 }
 module.exports = calculatePacks;
