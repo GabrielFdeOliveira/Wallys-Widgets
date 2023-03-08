@@ -32,7 +32,7 @@ I'll try to break down the problem into smaller steps and plan the implementatio
 I used JavaScript, since it's the language I'm more familiar with ✅
 
 4- Test:
-Test the program with various input sizes and pack configurations to ensure that it is working correctly. ✅
+Test the solution with various input sizes and pack configurations to ensure that it is working correctly. ✅
 
 5- Refactor:
 Refactor the code if I can, trying to improve performance, readability, and maintainability.
@@ -40,4 +40,7 @@ Refactor the code if I can, trying to improve performance, readability, and main
     ❌ (Tried to eliminate the 'remaining' variable and subtract the packages from the  numOfWidgets itself, plus compare it to the size packages to decide if we should continue or not, but this only covers exact numbers and doesn't meet the problem's criteria) ❌
 
 6- Build the front-end:
-Create some sort of management system for the front-end to manipulate the widgets orders, using the logic built at the back end.
+Create some sort of management system for the front-end to manipulate the widgets orders, using the logic built at the back end. ✅
+
+7- Test the front-end:
+make sure the App renders as it should. ✅
