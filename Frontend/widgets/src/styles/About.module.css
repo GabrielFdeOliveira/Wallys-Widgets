@@ -1,0 +1,29 @@
+.container {
+  margin: auto;
+  height: 100vh;
+  padding: 20px 100px;
+  font-family: Arial, sans-serif;
+  background-color: #ebeceb;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+.container h1 {
+  font-size: 3em;
+}
+.text {
+  height: 80%;
+  width: 100%;
+  padding: 0 50px;
+  border: 2px solid #a5dce1;
+  border-radius: 10px;
+  margin-top: 100px;
+  background-color: #a5e1c8;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #333;
+  overflow: auto;
+}
