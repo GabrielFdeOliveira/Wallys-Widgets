@@ -9,9 +9,6 @@ function Home() {
   const [packSizes, setPackSizes] = useState([5000, 2000, 1000, 500, 250]);
   const [result, setResult] = useState({});
 
-  console.log(packSizes);
-  // console.log(result);
-
   const handleOrderChange = (event) => {
     setNumOfWidgets(event.target.value);
   };
@@ -26,12 +23,12 @@ function Home() {
       event.target.parentElement.querySelector("input").value
     );
 
-    if (packSizes.includes(newValue)) {
+    if (isNaN(newValue) || packSizes.includes(newValue)) {
       // Alert user that value already exists
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Package size already exists",
+        title: "Your input is invalid or this package size already exists",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -74,7 +71,7 @@ function Home() {
   };
 
   return (
-    <div className={styles.page}>
+    <div className={styles.page} data-testid="home">
       <div className={styles.container}>
         <div className={styles.text}>
           <h1>Welcome to Wallys Widgets!</h1>
