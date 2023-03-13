@@ -1,5 +1,5 @@
 function calculatePacks(numOfWidgets, packSizes) {
-  if (typeof numOfWidgets !== "number" || numOfWidgets <= 0) {
+  if (isNaN(numOfWidgets) || numOfWidgets <= 0) {
     throw new Error("Invalid input");
   }
 

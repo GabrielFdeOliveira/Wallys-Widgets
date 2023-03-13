@@ -65,9 +65,23 @@ function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const packSizesAsNumbers = packSizes.map(Number);
-    const result = calculatePacks(Number(numOfWidgets), packSizesAsNumbers);
-    setResult(result);
+
+    const order = Number(
+      event.target.parentElement.querySelector("input").value
+    );
+
+    if (isNaN(order) || order <= 0) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Invalid input",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } else {
+      const result = calculatePacks(Number(numOfWidgets), packSizes);
+      setResult(result);
+    }
   };
 
   return (
