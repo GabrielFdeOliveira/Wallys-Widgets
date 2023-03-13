@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import calculatePacks from "../helperFunctions/calculatePacks";
 import styles from "../styles/Home.module.css";
 import Swal from "sweetalert2";
@@ -8,6 +8,18 @@ function Home() {
   const [numOfWidgets, setNumOfWidgets] = useState("");
   const [packSizes, setPackSizes] = useState([5000, 2000, 1000, 500, 250]);
   const [result, setResult] = useState({});
+
+  useEffect(() => {
+    const data = localStorage.getItem("STORED_PACK_SIZES");
+
+    if (data) {
+      setPackSizes(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("STORED_PACK_SIZES", JSON.stringify(packSizes));
+  }, [packSizes]);
 
   const handleOrderChange = (event) => {
     setNumOfWidgets(event.target.value);
@@ -69,7 +81,7 @@ function Home() {
     const order = Number(
       event.target.parentElement.querySelector("input").value
     );
-
+    // Add user when input is invalid
     if (isNaN(order) || order <= 0) {
       Swal.fire({
         position: "center",
