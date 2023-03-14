@@ -20,7 +20,14 @@ describe("calculatePacks", () => {
     expect(calculatePacks(251, [5000, 2000, 1000, 500, 250])).toEqual([500]);
   });
   expect(calculatePacks(501, [5000, 2000, 1000, 500, 250])).toEqual([500, 250]);
+  expect(calculatePacks(5000, [5000, 2000, 1000, 500, 250])).toEqual([5000]);
+  expect(calculatePacks(5001, [5000, 2000, 1000, 500, 250])).toEqual([
+    5000, 250,
+  ]);
   expect(calculatePacks(12001, [5000, 2000, 1000, 500, 250])).toEqual([
     5000, 5000, 2000, 250,
+  ]);
+  expect(calculatePacks(12000, [5000, 2000, 1000, 500, 250])).toEqual([
+    5000, 5000, 2000,
   ]);
 });

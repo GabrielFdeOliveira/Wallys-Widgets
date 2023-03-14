@@ -8,8 +8,12 @@ function calculatePacks(numOfWidgets, packSizes) {
 
   while (remaining > 0) {
     for (let i = 0; i < packSizes.length; i++) {
-      if (remaining > packSizes[i]) {
-        if (i === 0) {
+      if (remaining >= packSizes[i]) {
+        if (remaining === packSizes[i]) {
+          remaining -= packSizes[i];
+          result.push(packSizes[i]);
+          break;
+        } else if (i === 0) {
           remaining -= packSizes[i];
           result.push(packSizes[i]);
           break;
