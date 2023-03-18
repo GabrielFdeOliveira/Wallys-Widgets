@@ -8,7 +8,7 @@ function About() {
         <h1>Development journey</h1>
         <p>
           In this write-up, I'll discuss my experience building this solution.
-          My first step was carefully reading through your assignment, trying to
+          My first step was carefully reading through the assignment, trying to
           draw parallels with previous experiences I've had. During this
           process, I noticed a vague instruction about making the app flexible
           to accommodate new pack sizes or changes to existing ones. I wasn't
@@ -23,9 +23,6 @@ function About() {
           Initially, I planned to create an API and store package sizes in a
           database, but I realized this would be over-engineering. Instead, I
           decided to use a simple state to keep track of the pack sizes.
-          However, by that point, I had already created a JavaScript file and
-          some tests for my solution, decided to leave it there for legacy
-          purposes.
         </p>
         <br />
         <p>
@@ -71,13 +68,6 @@ function About() {
           the Next.js community.
         </p>
         <br />
-        <p>
-          Given more time, I would change my calculatePack function to return an
-          object with two properties ("package size" and "number of units") to
-          make it more readable on the browser. I would also add another
-          component to keep track of previous orders and would spend more time
-          styling the app to make it more visually appealing and responsive.
-        </p>
         <p>
           Overall, this was a challenging project that helped me improve my
           current skills, and I hope to have the opportunity to discuss it

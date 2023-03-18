@@ -1,21 +1,47 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import styles from "./Header.module.css";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const location = useRouter();
+
   return (
-    <div className={styles.navbar}>
-      <div className={styles.navbarHome}>
-        <Link href="/">
-          <p>Home</p>
-        </Link>
-      </div>
-      <div className={styles.navbarAbout}>
-        <Link href="/about">
-          <p>About</p>
-        </Link>
-      </div>
-    </div>
+    <Breadcrumb
+      fontWeight="small"
+      fontSize="3em"
+      bg="blue.100"
+      top="0"
+      right="0"
+      color="black.50"
+      paddingX="100"
+    >
+      <BreadcrumbItem>
+        <BreadcrumbLink
+          href="/"
+          _hover={{
+            background: "white",
+          }}
+          _active={{
+            bg: location.pathname === "/" ? "white" : undefined,
+          }}
+        >
+          Home
+        </BreadcrumbLink>
+      </BreadcrumbItem>
+
+      <BreadcrumbItem>
+        <BreadcrumbLink
+          href="/about"
+          _hover={{
+            background: "white",
+          }}
+          _active={{
+            bg: location.pathname === "/about" ? "white" : undefined,
+          }}
+        >
+          About
+        </BreadcrumbLink>
+      </BreadcrumbItem>
+    </Breadcrumb>
   );
 };
 
