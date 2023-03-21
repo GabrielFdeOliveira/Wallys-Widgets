@@ -65,13 +65,9 @@ function About() {
         <p>
           I also encountered some difficulties configuring the testing
           environment, but I was able to find the necessary resources thanks to
-          the Next.js community.
-        </p>
-        <br />
-        <p>
-          Overall, this was a challenging project that helped me improve my
-          current skills, and I hope to have the opportunity to discuss it
-          further with you in a call or in person.
+          the Next.js community. Overall, this was a challenging project that
+          helped me improve my current skills, and I hope to have the
+          opportunity to discuss it further with you in a call or in person.
         </p>
       </div>
     </div>

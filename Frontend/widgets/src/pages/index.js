@@ -97,35 +97,37 @@ function Home() {
   };
 
   return (
-    <div className={styles.page} data-testid="home">
-      <div className={styles.container}>
-        <div className={styles.text}>
-          <h1>Welcome to Wallys Widgets!</h1>
-          <p>
-            Complete and customizable packs, efficient orders, optimal solutions
-            - Wally's Widgets delivers widgets your way.
-          </p>
-        </div>
-        <WidgetOrderForm
-          numOfWidgets={numOfWidgets}
-          handleOrderChange={handleOrderChange}
-          handleSubmit={handleSubmit}
-          packSizes={packSizes}
-          handleAddPackSize={handleAddPackSize}
-          handleRemovePackSize={handleRemovePackSize}
-          handleUpdatePackSize={handleUpdatePackSize}
-        />
-        <div className={styles.resultContainer}>
-          {result.length > 0 && (
+    <div className={styles.outer}>
+      <div className={styles.page} data-testid="home">
+        <div className={styles.container}>
+          <div className={styles.text}>
+            <h1>Welcome to Wallys Widgets!</h1>
             <p>
-              You will receive the following package(s):{" "}
-              {result.map((pack, index) => (
-                <span key={index}>
-                  {pack} units{index !== result.length - 1 && ","}{" "}
-                </span>
-              ))}
+              Complete and customizable packs, efficient orders, optimal
+              solutions - Wally's Widgets delivers widgets your way.
             </p>
-          )}
+          </div>
+          <WidgetOrderForm
+            numOfWidgets={numOfWidgets}
+            handleOrderChange={handleOrderChange}
+            handleSubmit={handleSubmit}
+            packSizes={packSizes}
+            handleAddPackSize={handleAddPackSize}
+            handleRemovePackSize={handleRemovePackSize}
+            handleUpdatePackSize={handleUpdatePackSize}
+          />
+          <div className={styles.resultContainer}>
+            {result.length > 0 && (
+              <p>
+                You will receive the following package(s):{" "}
+                {result.map((pack, index) => (
+                  <span key={index}>
+                    {pack} units{index !== result.length - 1 && ","}{" "}
+                  </span>
+                ))}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </div>

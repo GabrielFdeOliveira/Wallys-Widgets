@@ -1,3 +1,4 @@
+/* Default styles for WidgetOrderForm */
 .form {
   display: flex;
   flex-direction: column;
@@ -52,4 +53,27 @@
   background-color: #008cba;
   color: white;
   cursor: pointer;
+}
+
+/* Responsive styles for WidgetOrderForm */
+@media screen and (max-width: 768px) {
+  .form {
+    margin-top: 2em;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .opt {
+    font-size: 14px;
+  }
+
+  .addButton,
+  .removeButton,
+  .submitButton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }

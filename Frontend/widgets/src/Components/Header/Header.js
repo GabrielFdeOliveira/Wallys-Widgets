@@ -1,27 +1,28 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 
 const Header = () => {
-  const location = useRouter();
-
   return (
     <Breadcrumb
-      fontWeight="small"
-      fontSize="3em"
-      bg="blue.100"
+      fontWeight="bold"
+      fontSize={["md", "lg", "xl", "2xl"]}
+      bgGradient="linear(to-r, purple.400, pink.400)"
+      color="white"
+      paddingX={{ base: 4, md: 8, lg: 12 }}
+      boxShadow="md"
+      position="sticky"
       top="0"
-      right="0"
-      color="black.50"
-      paddingX="100"
+      zIndex="10"
     >
       <BreadcrumbItem>
         <BreadcrumbLink
           href="/"
           _hover={{
-            background: "white",
+            color: "purple.400",
+            bg: "white",
           }}
           _active={{
-            bg: location.pathname === "/" ? "white" : undefined,
+            bg: "white",
+            color: "purple.400",
           }}
         >
           Home
@@ -32,13 +33,30 @@ const Header = () => {
         <BreadcrumbLink
           href="/about"
           _hover={{
-            background: "white",
+            color: "purple.400",
+            bg: "white",
           }}
           _active={{
-            bg: location.pathname === "/about" ? "white" : undefined,
+            bg: "white",
+            color: "purple.400",
           }}
         >
           About
+        </BreadcrumbLink>
+      </BreadcrumbItem>
+      <BreadcrumbItem>
+        <BreadcrumbLink
+          href="/assignment"
+          _hover={{
+            color: "purple.400",
+            bg: "white",
+          }}
+          _active={{
+            bg: "white",
+            color: "purple.400",
+          }}
+        >
+          Assignment
         </BreadcrumbLink>
       </BreadcrumbItem>
     </Breadcrumb>
